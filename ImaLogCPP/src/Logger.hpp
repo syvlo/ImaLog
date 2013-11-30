@@ -1,8 +1,9 @@
 #ifndef IMALOG_LOGGER_HPP_
 # define IMALOG_LOGGER_HPP_
 
-# include <string>
+# include <ctime>
 # include <fstream>
+# include <string>
 
 namespace ImaLog
 {
@@ -17,6 +18,8 @@ namespace ImaLog
   private:
     std::ofstream logFile_;
     const std::string imageDir_;
+
+    void writeDate();
   };
 }
 

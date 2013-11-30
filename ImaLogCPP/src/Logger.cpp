@@ -16,5 +16,20 @@ Logger::~Logger()
 void
 Logger::write(const char* text)
 {
+  writeDate();
   logFile_ << text;
+}
+
+void
+Logger::writeDate()
+{
+  std::time_t time;
+  struct std::tm timeInfo;
+  char format[32];
+
+  std::time(&time);
+  timeInfo = *std::localtime(&time);
+
+  std::strftime(format, 32, "%Y/%m/%d %H:%M:%S", &timeInfo);
+  logFile_ << format << ": ";
 }
