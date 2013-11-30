@@ -25,14 +25,19 @@ namespace ImaLog
 	       const char* imgName = NULL);
 
   private:
+    Logger();
     const std::string imageDir_;
     const std::string defaultExt_;
     const std::string defaultName_;
     unsigned imgNumber_;
+    bool first_;
     std::ofstream logFile_;
     
-
+    void writeIntro();
+    void writeText(const char* text, bool end);
+    void writeImage(const char* name, bool end);
     void writeDate();
+    void writeOutro();
   };
 }
 
