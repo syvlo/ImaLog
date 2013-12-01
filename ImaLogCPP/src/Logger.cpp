@@ -21,7 +21,7 @@ Logger::Logger(const char* logFileName,
   //TODO: check for errors.
 
   //Root for the JSON format.
-  logFile_ << "{" << std::endl;
+  logFile_ << "{";
 }
 
 Logger::~Logger()
